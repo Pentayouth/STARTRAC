@@ -484,8 +484,8 @@ StartracOut.plot <- function(obj,index.type,byPatient)
     }
   }else if(index.type=="pairwise.tran"){
     if(nrow(obj@pIndex.tran)==0){ return(NULL) }
-    dat.plot <- as.matrix(subset(obj@pIndex.tran,aid==obj@proj)[,c(-1,-2,-3)])
-    rownames(dat.plot) <- subset(obj@pIndex.tran,aid==obj@proj)[,3]
+    dat.plot <- as.matrix(subset(obj@pIndex.tran,aid==obj@proj)[,c(-1,-2,-3,-4)])
+    rownames(dat.plot) <- subset(obj@pIndex.tran,aid==obj@proj)[,4]
     dat.plot[is.na(dat.plot)] <- 0
     yrange <- pretty(dat.plot)
     col.heat <- colorRamp2(seq(0,max(yrange),length=15),
